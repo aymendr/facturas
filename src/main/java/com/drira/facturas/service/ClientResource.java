@@ -16,7 +16,7 @@ public class ClientResource {
     public ClientResource(ClientService clientService) {
         this.clientService = clientService;
     }
-
+    @CrossOrigin(origins = "http://localhost:4200/", maxAge = 3600)
     @GetMapping("/all")
     public ResponseEntity<List<Client>> getAllClients(){
         List<Client> clients = clientService.findAllClients();
